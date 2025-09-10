@@ -13,8 +13,8 @@ CORS(app)
 
 IMAP_SERVER = "imap.gmail.com"
 IMAP_PORT = 993
-SPECIFIC_SENDER = "Info@blsinternational.com"
-SPECIFIC_STRING = "BLS Visa Appointment - Email Verification"
+SPECIFIC_SENDER = "noreply@thespainvisa.com"
+SPECIFIC_STRING = "Visa Appointment - Email Verification"
 
 def get_body(msg):
             try:
@@ -105,3 +105,4 @@ def get_otp():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
