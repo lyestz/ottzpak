@@ -69,10 +69,10 @@ def fetch_otp(from_email, password):
                 if not body or not isinstance(body, str):
                     return {"status": "no", "error": "Failed to extract body from email"}
 
-                cleaned_body = body.replace("\r", "").replace("\n", " ").replace("<br>", "").strip()
+                cleaned_body = body.replace("\r", "").replace("\n", "").replace("<br>", "").strip()
 
                 try:
-                    otp = cleaned_body.split("mentioned below ")[1][:6]
+                    otp = cleaned_body.split("mentioned below")[1][:6]
                     imap.store(latest_email_id, '+FLAGS', '\\Deleted')
                     imap.expunge()
                     imap.logout()
@@ -105,4 +105,5 @@ def get_otp():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
